@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7BE2E621-ED3C-4985-BF4F-494BB7CE557F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailPreview", "src\EmailPreview\EmailPreview.csproj", "{104D2F54-D191-4D86-B51F-580A0F5101B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{104D2F54-D191-4D86-B51F-580A0F5101B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104D2F54-D191-4D86-B51F-580A0F5101B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104D2F54-D191-4D86-B51F-580A0F5101B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104D2F54-D191-4D86-B51F-580A0F5101B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{104D2F54-D191-4D86-B51F-580A0F5101B2} = {7BE2E621-ED3C-4985-BF4F-494BB7CE557F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {137E87DC-612C-4F11-B85C-518D01549303}
+	EndGlobalSection
+EndGlobal
