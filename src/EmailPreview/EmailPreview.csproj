@@ -2,13 +2,14 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <PublishAot>true</PublishAot>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MailKit" Version="4.0.0" />
+    <PackageReference Include="PInvoke.User32" Version="0.7.124" />
     <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
   </ItemGroup>
 
