@@ -7,6 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7BE2E621-ED3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailPreview", "src\EmailPreview\EmailPreview.csproj", "{104D2F54-D191-4D86-B51F-580A0F5101B2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pkg", "pkg", "{FBEC5600-67D1-4918-AC15-F8B9A4687423}"
+	ProjectSection(SolutionItems) = preProject
+		pkg\AppxManifest.arm64.xml = pkg\AppxManifest.arm64.xml
+		pkg\AppxManifest.x64.xml = pkg\AppxManifest.x64.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

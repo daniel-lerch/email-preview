@@ -5,6 +5,7 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <PublishAot>true</PublishAot>
+    <ApplicationIcon>..\..\pkg\Logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

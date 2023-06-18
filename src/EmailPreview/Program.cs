@@ -13,9 +13,9 @@ internal class Program
 
         Option<FileInfo?> outputFileOption = new(name: "--output", description: "Write email to this .eml file");
         Option<string?> subjectOption = new(name: "--subject", description: "Subject for generated email");
-        Option<bool> watchOption = new(name: "--watch", description: "Watch for changes of the HTML file");
+        Option<bool> watchOption = new(name: "--watch", description: "Watch for changes of the HTML file and hot reload");
 
-        RootCommand rootCommand = new();
+        RootCommand rootCommand = new(description: "Preview HTML email templates in Outlook");
         rootCommand.AddArgument(htmlFileArgument);
         rootCommand.AddOption(outputFileOption);
         rootCommand.AddOption(subjectOption);
