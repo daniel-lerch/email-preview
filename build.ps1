@@ -1,13 +1,13 @@
 $sdkPath = "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64"
 $executableName = "EmailPreview.exe"
 $executablePdbName = "EmailPreview.pdb"
-$certificatePath = "C:\Users\Daniel\source\vocup\src\Vocup.Packaging\Vocup.Packaging_TemporaryKey.pfx"
 
 $projectPath = $PSScriptRoot
 $intermediateRootPath = Join-Path $projectPath "pkg\obj"
 $intermediateAppxPath = Join-Path $intermediateRootPath "appx"
 $intermediateBundlePath = Join-Path $intermediateRootPath "bundle"
 $imagesPath = Join-Path $projectPath "pkg\Images"
+$certificatePath = Join-Path $projectPath ".\pkg\EmailPreview_TemporaryKey.pfx"
 
 $platformX64 = [PSCustomObject]@{
     Architecture = "x64"
@@ -33,6 +33,10 @@ function BuildPlatform ($Platform) {
     Get-ChildItem -Path $imagesPath
         | Where-Object -FilterScript { $_.Name.Contains(".scale-200") }
         | ForEach-Object { Copy-Item -Path $_.FullName -Destination (Join-Path $imagePublishPath $_.Name.Replace(".scale-200", "")) }
+    Get-ChildItem -Path $imagesPath
+        | Where-Object -FilterScript { $_.Name.Contains(".targetsize-") -or $_.Name.Contains(".altform-") }
+        | ForEach-Object { Copy-Item -Path $_.FullName -Destination (Join-Path $imagePublishPath $_.Name) }
+    & $sdkPath\makepri.exe new /pr .\pkg\obj\$($Platform.Architecture) /cf .\pkg\priconfig.xml /of .\pkg\obj\$($Platform.Architecture)\resources.pri
     $appxPath = Join-Path $intermediateAppxPath "EmailPreview_$($Platform.Architecture).appx"
     & $sdkPath\makeappx.exe pack /d $intermediatePath /p $appxPath
     & $sdkPath\signtool.exe sign /fd SHA256 /f $certificatePath $appxPath
