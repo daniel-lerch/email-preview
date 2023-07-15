@@ -2,6 +2,8 @@
 
 Email preview lets you preview your HTML email templates in Microsoft Outlook with hot reload.
 
+![Screenshot of Visual Studio Code, Email Preview, and Outlook](docs/assets/travelblog-vs-code-outlook.png)
+
 ## Contribute
 
 Contributions are highly welcome. Please open an issue before implementing a feature to discuss your plans.
