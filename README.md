@@ -18,6 +18,3 @@ Prerequisites:
 - MSVC C++ ARM64/ARM64EC build tools
 - Windows 11 SDK (10.0.22000.0)
 - Tools for Universal Windows Platform
-
-## Attribution
-[Html icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/html)

@@ -1,8 +1,8 @@
-$sdkPath = "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64"
-$executableName = "EmailPreview.exe"
-$executablePdbName = "EmailPreview.pdb"
+$sdkPath = "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64"
+$executableName = "email-preview.exe"
+$executablePdbName = "email-preview.pdb"
 $targetFramework = "net7.0-windows"
-$version = "1.0.0.0"
+$version = "1.0.1.0"
 
 $projectPath = $PSScriptRoot
 $intermediateRootPath = Join-Path $projectPath "pkg\obj"
@@ -38,14 +38,7 @@ function BuildPlatform ($Platform) {
     New-Item -ItemType Directory -Path $intermediatePath -Force | Out-Null
     Copy-Item -Path (Join-Path $publishPath $executableName) -Destination $intermediatePath -Force
     Copy-Item -Path $Platform.AppxManifestFile -Destination (Join-Path $intermediatePath "AppxManifest.xml") -Force
-    $imagePublishPath = (Join-Path $intermediatePath "Images")
-    New-Item -ItemType Directory -Path $imagePublishPath -Force | Out-Null
-    Get-ChildItem -Path $imagesPath
-        | Where-Object -FilterScript { $_.Name.Contains(".scale-200") }
-        | ForEach-Object { Copy-Item -Path $_.FullName -Destination (Join-Path $imagePublishPath $_.Name.Replace(".scale-200", "")) }
-    Get-ChildItem -Path $imagesPath
-        | Where-Object -FilterScript { $_.Name.Contains(".targetsize-") -or $_.Name.Contains(".altform-") }
-        | ForEach-Object { Copy-Item -Path $_.FullName -Destination (Join-Path $imagePublishPath $_.Name) }
+    Copy-Item -Path $imagesPath -Destination $intermediatePath -Recurse -Force
 
     # Build package resources
     & $sdkPath\makepri.exe new /pr .\pkg\obj\$($Platform.Architecture) /cf .\pkg\priconfig.xml /of .\pkg\obj\$($Platform.Architecture)\resources.pri /o
