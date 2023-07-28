@@ -1,5 +1,4 @@
 ﻿using PInvoke;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System;
 using System.Linq;
@@ -33,7 +32,7 @@ public static class Outlook
             return 0;
         }
 
-        foreach (nint hWnd in GetProcessWindows(outlookProcess))
+        foreach (nint hWnd in NativeMethods.GetProcessWindows(outlookProcess))
         {
             if (User32.GetWindowText(hWnd).Contains(subject))
             {
@@ -43,19 +42,5 @@ public static class Outlook
 
         Console.WriteLine("Could not find an Outlook windows that's title contains {0}", subject);
         return 0;
-    }
-
-    private static IReadOnlyList<nint> GetProcessWindows(Process process)
-    {
-        List<nint> windows = new();
-
-        User32.EnumWindows((hWnd, lParam) =>
-        {
-            if (User32.GetWindowThreadProcessId(hWnd, out int processId) != 0 && processId == process.Id)
-                windows.Add(hWnd);
-            return true;
-        }, 0);
-
-        return windows;
     }
 }
