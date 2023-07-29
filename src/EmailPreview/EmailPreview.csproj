@@ -8,7 +8,7 @@
     <PublishAot>true</PublishAot>
     <AssemblyName>email-preview</AssemblyName>
     <ApplicationIcon>..\..\pkg\Logo.ico</ApplicationIcon>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <Copyright>© 2023 Daniel Lerch</Copyright>
     <Product>Email Preview</Product>
   </PropertyGroup>

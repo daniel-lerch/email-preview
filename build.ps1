@@ -2,7 +2,7 @@ $sdkPath = "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64"
 $executableName = "email-preview.exe"
 $executablePdbName = "email-preview.pdb"
 $targetFramework = "net7.0-windows"
-$version = "1.0.1.0"
+$version = "1.1.0.0"
 
 $projectPath = $PSScriptRoot
 $intermediateRootPath = Join-Path $projectPath "pkg\obj"
