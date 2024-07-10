@@ -1,5 +1,7 @@
 # Email Preview
 
+> ⚠️ This project has been discontinued. I recommend to use [MJML](https://mjml.io/) for email templates instead of pure HTML. MJML renders almost perfectly consistent across different email clients and there is a preview available for VS Code as an [extension](https://marketplace.visualstudio.com/items?itemName=mjmlio.vscode-mjml).
+
 Email preview lets you preview your HTML email templates in Microsoft Outlook with hot reload.
 
 ![Screenshot of Visual Studio Code, Email Preview, and Outlook](docs/assets/travelblog-vs-code-outlook.png)
